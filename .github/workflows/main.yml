@@ -140,7 +140,7 @@ jobs:
     needs: [Import_SQL]
     environment: 
       name: staging
-      #url:
+      url: https://gastondevops.devcode.com.ar/
     steps:
       - uses: actions/checkout@v2
       - name: Upload ftp
@@ -150,7 +150,7 @@ jobs:
           user: ${{ secrets.FTP_USERNAME_STG }}
           password: ${{ secrets.FTP_PASSWORD_STG }}
           localDir: "src/"
-          remoteDir: "."
+          remoteDir: "gastondevops/"
 
   
   deploy_production:
